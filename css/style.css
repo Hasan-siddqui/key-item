@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap');
+
+* {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: all .2s linear;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 25px 20px;
+}
+
+.container .heading {
+  font-size: 40px;
+  margin-bottom: 20px;
+  color: #6d2d37;
+}
+
+.container .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 20px;
+}
+
+.container .box-container .box {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+  display: none;
+}
+
+.container .box-container .box:nth-child(1),
+.container .box-container .box:nth-child(2),
+.container .box-container .box:nth-child(3) {
+  display: inline-block;
+}
+
+.container .box-container .box .image {
+  overflow: hidden;
+  height: 250px;
+  border-radius: 5px;
+}
+
+.container .box-container .box .image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.container .box-container .box:hover .image img {
+  transform: scale(1.1);
+}
+
+.container .box-container .box .content h3 {
+  font-size: 20px;
+  color: #334;
+}
+
+.content {
+  padding: 10px;
+  border-radius: 0 0 10px 10px;
+  height: 76px;
+
+}
+
+.download-btn {
+  float: right;
+  display: inline-block;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  will-change: box-shadow, transform;
+  background:  #A54D5A 100%;
+  box-shadow: 0px 2px 4px rgb(45 35 66 / 40%), 0px 7px 13px -3px rgb(45 35 66 / 30%), inset 0px -3px 0px rgb(58 65 111 / 50%);
+  padding: 11px 32px;
+  border-radius: 6px;
+  color: #fff;
+  height: 48px;
+  font-size: 18px;
+  text-shadow: 0 1px 0 rgb(0 0 0 / 40%);
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.download-btn:hover {
+  box-shadow: 0px 4px 8px rgb(45 35 66 / 40%), 0px 7px 13px -3px rgb(45 35 66 / 30%), inset 0px -3px 0px #A54D5A;
+  transform: translateY(-2px);
+}
+
+.download-btn:active {
+  box-shadow: inset 0px 3px 7px #A54D5A;
+  transform: translateY(2px);
+}
+
+
+#load-more {
+  display: inline-block;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+  will-change: box-shadow, transform;
+  background: #FCFCFD;
+  box-shadow: 0px 2px 4px rgb(45 35 66 / 40%), 0px 7px 13px -3px rgb(45 35 66 / 30%), inset 0px -3px 0px #d6d6e7;
+  height: 48px;
+  padding: 12px 32px;
+  font-size: 18px;
+  font-weight: bolder;
+  border-radius: 6px;
+  color: #000000;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+
+}
+.btn-2 {
+  max-width: 1169px;
+  margin: 22px auto;
+  /* text-align: center; */
+}
+
+#load-more:hover {
+  box-shadow: 0px 4px 8px rgb(45 35 66 / 40%), 0px 7px 13px -3px rgb(45 35 66 / 30%), inset 0px -3px 0px #d6d6e7;
+  transform: translateY(-2px);
+}
+
+#load-more:active {
+  box-shadow: inset 0px 3px 7px #d6d6e7;
+  transform: translateY(2px);
+}
+
+@media (max-width:450px) {
+
+  .container .heading {
+    font-size: 25px;
+  }
+
+  .container .box-container {
+    grid-template-columns: 1fr;
+  }
+
+  .container .box-container .box .image {
+    height: 200px;
+  }
+
+}
+@media  screen and (max-width:768px ){
+  .btn-2 {
+     display: flex;
+     justify-content: center;
+     justify-content: space-around;
+   }
+}
+@media screen and (max-width: 465px) {
+  .btn-2{
+    width: 72%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+}
