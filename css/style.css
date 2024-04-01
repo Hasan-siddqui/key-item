@@ -389,6 +389,12 @@ button.read-text:hover {
 i.fa.fa-play {
   margin-right: 6px;
 }
+i.fa.fa-pause {
+  margin-right: 6px;
+}
+.hidden {
+  display: none;
+}
 
 .download-buttons {
   width: 98%;
