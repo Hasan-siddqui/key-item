@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .carousel-container {
+            width: 26%;
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slide {
+            float: left;
+            width: 100%;
+            display: none;
+        }
+
+        .caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px;
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="carousel-container">
+        <button class="carousel-button prev">Prev</button>
+        <div class="slide">
+            <img src="../images/img-1.jpg" alt="Slide 1">
+            <div class="caption">Caption 1</div>
+        </div>
+        <div class="slide">
+            <img src="../images/img-2.jpg" alt="Slide 2">
+            <div class="caption">Caption 2</div>
+        </div>
+        <!-- Add more slides as needed -->
+        <button class="carousel-button next">Next</button>
+    </div>
+    <div class="carousel-container">
+        <button class="carousel-button prev">Prev</button>
+        <div class="slide">
+            <img src="../images/img-1.jpg" alt="Slide 1">
+            <div class="caption">Caption 1</div>
+        </div>
+        <div class="slide">
+            <img src="../images/img-2.jpg" alt="Slide 2">
+            <div class="caption">Caption 2</div>
+        </div>
+        <!-- Add more slides as needed -->
+        <button class="carousel-button next">Next</button>
+    </div>
+    <div class="carousel-container">
+        <button class="carousel-button prev">Prev</button>
+        <div class="slide">
+            <img src="../images/img-1.jpg" alt="Slide 1">
+            <div class="caption">Caption 1</div>
+        </div>
+        <div class="slide">
+            <img src="../images/img-2.jpg" alt="Slide 2">
+            <div class="caption">Caption 2</div>
+        </div>
+        <!-- Add more slides as needed -->
+        <button class="carousel-button next">Next</button>
+    </div>
+    <!-- Add more carousel containers as needed -->
+
+    <script>
+        const carouselContainers = document.querySelectorAll(".carousel-container");
+
+        carouselContainers.forEach((container) => {
+            let slideIndex = 0;
+            const slides = container.querySelectorAll(".slide");
+            const prevButton = container.querySelector(".prev");
+            const nextButton = container.querySelector(".next");
+
+            function showSlides() {
+                for (let i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                if (slideIndex >= slides.length) {
+                    slideIndex = 0;
+                } else if (slideIndex < 0) {
+                    slideIndex = slides.length - 1;
+                }
+                slides[slideIndex].style.display = "block";
+            }
+
+            // Show next slide on next button click
+            nextButton.addEventListener("click", () => {
+                slideIndex++;
+                showSlides();
+            });
+
+            // Show previous slide on prev button click
+            prevButton.addEventListener("click", () => {
+                slideIndex--;
+                showSlides();
+            });
+
+            showSlides(); // Start the slideshow
+        });
+    </script>
+</body>
+
+</html>
