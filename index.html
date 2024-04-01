@@ -965,39 +965,30 @@
                // Toggle visibility of play and pause icons
                const playIcon = button.querySelector(".fa-play");
                const pauseIcon = button.querySelector(".fa-pause");
-               playIcon.classList.toggle("hidden");
-               pauseIcon.classList.toggle("hidden");
+               playIcon.classList.add("hidden"); // Initially hide play icon
+               pauseIcon.classList.remove("hidden"); // Show pause icon
 
-               // Check if the pause icon is visible to determine the text-to-speech action
-               if (pauseIcon.classList.contains("hidden")) {
-                  // Pause icon is hidden, so pause the text-to-speech
-                  pauseSpeech();
-               } else {
-                  // Pause icon is visible, so speak the text using text-to-speech API
-                  speakText(textToRead);
+               // Function to speak the text using text-to-speech API
+               function speakText(text) {
+                  const speech = new SpeechSynthesisUtterance();
+                  speech.text = text;
+                  speech.volume = 1;
+                  speech.rate = 1;
+                  speech.pitch = 1;
+                  window.speechSynthesis.speak(speech);
+
+                  // When speech ends, show play icon and hide pause icon
+                  speech.onend = function () {
+                     playIcon.classList.remove("hidden");
+                     pauseIcon.classList.add("hidden");
+                  };
                }
+
+               speakText(textToRead); // Start speaking the text
             });
          });
-
-         // Function to speak the text using text-to-speech API
-         function speakText(text) {
-            // Replace this with your text-to-speech API or library function
-            // For example, using SpeechSynthesis API
-            const speech = new SpeechSynthesisUtterance();
-            speech.text = text;
-            speech.volume = 1;
-            speech.rate = 1;
-            speech.pitch = 1;
-            window.speechSynthesis.speak(speech);
-         }
-
-         // Function to pause the text-to-speech
-         function pauseSpeech() {
-            // Replace this with your text-to-speech API or library function to pause speech
-            // For example, using SpeechSynthesis API
-            window.speechSynthesis.cancel();
-         }
       });
+
    </script>
 
 </body>
