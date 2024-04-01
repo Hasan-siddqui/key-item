@@ -410,10 +410,11 @@ i.fa.fa-play {
   padding: 11px 32px;
   border-radius: 6px;
   color: #fff;
-  height: 48px;
+  height: 70px;
   font-size: 18px;
   text-shadow: 0 1px 0 rgb(0 0 0 / 40%);
   transition: box-shadow 0.15s ease, transform 0.15s ease;
+  line-height: 22px;
 }
 
 .download-btn:hover {

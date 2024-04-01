@@ -17,7 +17,7 @@
    <div class="main">
       <div class="download-buttons">
          <div class="download-btn">
-            Download Catalogue
+            Download <br> Catalogue
          </div>
       </div>
       <div class="container">
@@ -723,6 +723,31 @@
          }
       });
 
+      // crausa title reader
+      document.addEventListener("DOMContentLoaded", function () {
+        const readTextButtons = document.querySelectorAll(".read-text");
+
+        readTextButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+                const contentElement = button.closest(".box").querySelector("h3");
+                const textToRead = contentElement.textContent;
+                // Replace this with your desired text-to-speech functionality
+                speakText(textToRead);
+            });
+        });
+
+        // Function to speak the text using text-to-speech API
+        function speakText(text) {
+            // Replace this with your text-to-speech API or library function
+            // For example, using SpeechSynthesis API
+            const speech = new SpeechSynthesisUtterance();
+            speech.text = text;
+            speech.volume = 1;
+            speech.rate = 1;
+            speech.pitch = 1;
+            window.speechSynthesis.speak(speech);
+        }
+    });
 
    </script>
 
