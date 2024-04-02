@@ -28,7 +28,14 @@
   margin-bottom: 20px;
   color: #6d2d37;
 }
-
+.content-text {
+  height: 88px;
+}
+.content-text h3 {
+  width: 70%;
+  text-align: left;
+  float: left;
+}
 .container .box-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -38,6 +45,7 @@
 .container .box-container .box {
   background-color: #fff;
   padding: 10px;
+  margin: 10px;
   border-radius: 10px 10px 10px 10px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
   display: none;
@@ -70,7 +78,7 @@
   color: #334;
   margin: 0;
 }
-/* image crausal */
+/* image crausal
 .carousel-container {
   overflow: hidden;
   position: relative;
@@ -194,7 +202,7 @@
 .hero-slider .flickity-page-dots .dot.is-selected {
   background: #ff0000;
   border: 0 solid #ff0000;
-}
+} */
 
 /* --------------------------------
 Masking
@@ -351,7 +359,6 @@ Masking
 .content {
   padding: 10px;
   border-radius: 0 0 10px 10px;
-  height: 100px;
 }
 .image{
   width: 100%;
@@ -377,6 +384,7 @@ button.read-text {
   transition-property: color, background-color, border-color;
   float: right;
   margin: 6px;
+  width: 26%;
 }
 
 button.read-text:hover {
